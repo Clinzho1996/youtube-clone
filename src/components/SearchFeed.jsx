@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Typography, Box } from "@mui/material";
 import { useParams } from "react-router-dom";
+import Navbar from "./Navbar";
 
 import { fetchFromApi } from "../utils/fetchFromApi";
 import Videos from "./Videos";
@@ -17,6 +18,7 @@ const SearchFeed = () => {
 
   return (
     <Box p={2} minHeight="95vh">
+      <Navbar />
       <Typography
         variant="h4"
         fontWeight={900}

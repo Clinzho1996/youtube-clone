@@ -6,6 +6,7 @@ import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import Loader from "./Loader";
 import Videos from "./Videos";
 import { fetchFromApi } from "../utils/fetchFromApi";
+import Navbar from "./Navbar";
 
 const VideoDetail = () => {
   const [videoDetail, setVideoDetail] = useState(null);
@@ -31,13 +32,14 @@ const VideoDetail = () => {
 
   return (
     <Box minHeight="95vh">
+      <Navbar />
       <Stack direction={{ xs: "column", md: "row" }}>
         <Box flex={1}>
           <Box
             sx={{
               width: { xs: "100%", md: "1100px" },
               position: "sticky",
-              top: "36px",
+              top: "86px",
             }}
           >
             <ReactPlayer

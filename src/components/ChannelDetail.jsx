@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Box } from "@mui/material";
-
+import Navbar from "./Navbar";
 import Videos from "./Videos";
 import ChannelCard from "./ChannelCard";
 import { fetchFromApi } from "../utils/fetchFromApi";
@@ -30,6 +30,7 @@ const ChannelDetail = () => {
 
   return (
     <Box minHeight="95vh">
+      <Navbar />
       <Box>
         <div
           style={{
