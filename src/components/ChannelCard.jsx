@@ -42,7 +42,7 @@ const ChannelCard = ({ channelDetail, marginTop }) => (
           }}
         />
         <Typography variant="h6">
-          {channelDetail?.snippet?.title}{" "}
+          {channelDetail?.snippet?.title}
           <CheckCircleIcon
             sx={{ fontSize: "14px", color: "gray", ml: "5px" }}
           />
@@ -51,7 +51,7 @@ const ChannelCard = ({ channelDetail, marginTop }) => (
           <Typography sx={{ fontSize: "15px", fontWeight: 500, color: "gray" }}>
             {parseInt(
               channelDetail?.statistics?.subscriberCount
-            ).toLocaleString("en-US")}{" "}
+            ).toLocaleString("en-US")}
             Subscribers
           </Typography>
         )}
