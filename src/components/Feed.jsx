@@ -32,7 +32,14 @@ const Feed = () => {
           variant="body2"
           sx={{ mt: 1.5, color: "#fff" }}
         >
-          Copyright 2023 Dev-clinton's Media
+          Copyright 2023{" "}
+          <a
+            style={{ color: "red" }}
+            href="https://devclinton.me"
+            target="_blank"
+          >
+            Dev-clinton's Media
+          </a>
         </Typography>
       </Box>
       <Box
