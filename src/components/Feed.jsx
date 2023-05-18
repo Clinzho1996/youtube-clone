@@ -1,5 +1,4 @@
 import React from "react";
-import Navbar from "./Navbar";
 import { useState, useEffect } from "react";
 import { Box, Stack, Typography } from "@mui/material";
 import Sidebar from "./Sidebar";
@@ -8,9 +7,12 @@ import { fetchFromApi } from "../utils/fetchFromApi";
 
 const Feed = () => {
   const [selectedCategory, setSelectedCategory] = useState("New");
+  const [videos, setVideos] = useState("");
 
   useEffect(() => {
-    fetchFromApi(`search?part=snippet&q=${selectedCategory}`);
+    fetchFromApi(`search?part=snippet&q=${selectedCategory}`).then((data) => {
+      setVideos(data.items);
+    });
   }, [selectedCategory]);
   return (
     <Stack sx={{ flexDirection: { sx: "column", md: "row" } }}>
@@ -33,11 +35,18 @@ const Feed = () => {
           Copyright 2023 Dev-clinton's Media
         </Typography>
       </Box>
-      <Box p={2} sx={{ overflowY: "auto", height: "90vh", flex: 2 }}>
+      <Box
+        p={2}
+        sx={{
+          overflowY: "auto",
+          height: "90vh",
+          flex: 2,
+        }}
+      >
         <Typography variant="h4" fontWeight="bold" sx={{ color: "white" }}>
           {selectedCategory} <span style={{ color: "red" }}>videos</span>
         </Typography>
-        <Videos videos={[]} />
+        <Videos videos={videos} />
       </Box>
     </Stack>
   );
